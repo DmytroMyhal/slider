@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>slider.js</title>
+</head>
+<body>
+  <style>
+    .slider {
+      width: 80vw;
+      margin: 10vw auto;
+      padding: 0 5vw;
+    }
+    
+    .slider .slide {
+      margin-right: 3vw;
+    }
+    
+    .slider .arrow {
+      z-index: 3;
+      top: 50%;
+      background: url('arrow.svg') no-repeat center;
+      background-size: contain;
+      width: 3vw;
+      height: 3vw;
+    }
+    
+    .slider .prev {
+      left: 0%;
+      top: 50%;
+      transform: translateY(-50%) rotate(-180deg);
+    }
+    
+    .slider .next {
+      right: 0%;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .slider .bullets {
+      margin-top: 2vw;
+    }
+    
+    .slider .dot {
+      width: 1vw;
+      height: 1vw;
+      margin: 0 .5vw;
+      border: 1px solid #08569C;
+      transition: background .3s ease;
+    }
+    
+    .slider .dot.active {
+      background: #08569C;
+    }
+  </style>
+ 
+  <div class="slider">
+    <div class="slide">
+      <h1>Lorem ipsum dolor sit amet.</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus amet recusandae magni quasi aperiam cumque reprehenderit nobis quaerat, voluptatem expedita facilis eligendi blanditiis dignissimos porro soluta officia minus temporibus dolorum libero ipsum. Ad porro iusto cupiditate, ducimus esse, ex modi.</p>
+    </div>
+    <div class="slide">
+      <h1>Lorem ipsum dolor sit amet, consectetur.</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum quod nisi similique in voluptatibus fuga cupiditate velit optio architecto adipisci, quam, molestiae laudantium illum, voluptates explicabo magni sunt ipsam fugit obcaecati unde amet animi perspiciatis pariatur ullam? Iusto non officiis ex veniam architecto, quis, quos accusantium vel mollitia deserunt eos.</p>
+    </div>
+    <div class="slide">
+      <h1>Lorem ipsum dolor.</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, officiis maxime ad illum necessitatibus hic esse. Eos suscipit quaerat ipsa sapiente ad labore, optio illo rerum, veniam possimus ratione explicabo.</p>
+    </div>
+    <div class="slide">
+      <h1>Lorem ipsum dolor amet.</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, officiis maxime ad illum necessitatibus hic esse. Eos suscipit quaerat ipsa sapiente ad labore, optio illo rerum, veniam possimus ratione explicabo.</p>
+    </div>
+    <div class="slide">
+      <h1>Lorem ipsum dolor sit amet, consectetur adipisicing.</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum quod nisi similique in voluptatibus fuga cupiditate velit optio architecto adipisci, quam, molestiae laudantium illum, voluptates explicabo magni sunt ipsam fugit obcaecati unde amet animi perspiciatis pariatur ullam? Iusto non officiis ex veniam architecto, quis, quos accusantium vel mollitia deserunt eos.</p>
+    </div>
+  </div>
+  
+  <script src="slider.js"></script>
+  <script>
+    new Slider(document.querySelector('.slider'), {
+      arrows: true,
+      bullets: true,
+      rollSpeed: 700,
+      slidesCountPerScreen: 3,
+      infinite: false,
+      period: 2000,
+      visibleOuterSlides: true,
+      onSlideChange: function(id, prevSlide) {}
+    });
+  </script>
+</body>
+</html>
